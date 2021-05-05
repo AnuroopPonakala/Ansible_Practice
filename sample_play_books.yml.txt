@@ -1,0 +1,12 @@
+---
+- name: creating https service books
+  yum:
+    name: httpd
+    state: latest
+- name: restarting httpd service books
+  service:
+    name: httpd
+    state: restarted
+- name: mesage alert books
+  debug:
+    msg: "Hi my first debug message"

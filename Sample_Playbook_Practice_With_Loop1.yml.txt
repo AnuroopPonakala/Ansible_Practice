@@ -1,0 +1,14 @@
+- name: sample playbook
+  hosts: Anuroop
+  gather_facts: true
+  become: yes
+  vars:
+    c:
+      - Anu
+      - roop
+      - APPonakala
+  tasks:
+    - name: Looping concept
+      debug:
+        msg: "Hi my first vables concept {{ item }}"
+      loop: "{{ c }}"
