@@ -1,0 +1,17 @@
+---
+- name: installing apache loops
+  yum:
+    name: "{{c[0] }}"
+    state : "{{c[2] }}"
+  tags:
+  - service_install
+- name : service starting loops
+  service:
+    name: "{{c[0] }}"
+    state : "{{c[1] }}"
+  tags:
+  - service_start
+- debug:
+    msg: "Hi my first vables concept"
+  tags:
+  - service_start

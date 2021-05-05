@@ -1,0 +1,19 @@
+---
+- name: inclue module using tags
+  hosts: Anuroop
+  gather_facts: true
+  become: yes
+  vars:
+    a:
+      - Loopss
+      - books
+    c:
+      - httpd
+      - started
+      - latest
+  tasks:
+    - name: calling include function using varibles
+      include_tasks: "sample_play_{{ item }}.yml"
+      loop: "{{ a }}"
+    - debug:
+        msg: "{{ansible_os_family}}"

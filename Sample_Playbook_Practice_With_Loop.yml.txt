@@ -1,0 +1,14 @@
+- name: sample playbook
+  hosts: Anuroop
+  gather_facts: true
+  become: yes
+  vars:
+    c:
+      name : Anu
+      age : roop
+      gender : APPonakala
+  tasks:
+    - name: looping for varibles
+      debug:
+        msg: "Hi my first vables concept {{ item }}"
+      loop: "{{ c|dict2items }}"
